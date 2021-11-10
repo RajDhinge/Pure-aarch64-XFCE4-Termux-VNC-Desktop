@@ -138,7 +138,7 @@ fi
 
 printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
 mkdir /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
-mv /sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
+mv sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
 mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
 printf "${Yellow}[*] ${Green}Attempting to start nginx\n"
@@ -153,7 +153,7 @@ php-fpm  >/dev/null 2>&1
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
 
-sleep 3000 && clear 
+sleep 3 && clear 
 figlet "VNC Active"
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
