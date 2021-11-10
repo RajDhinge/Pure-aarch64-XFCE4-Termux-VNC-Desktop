@@ -137,7 +137,8 @@ else
 fi
 
 printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
-mv /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
+mkdir /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
+mv /sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
 mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
 printf "${Yellow}[*] ${Green}Attempting to start nginx\n"
@@ -146,9 +147,9 @@ pkill nginx
 pkill php-fpm
 
 #Boot server
-mysqld_safe & >/dev/null 2>&1
-nginx
-php-fpm
+mysqld_safe >/dev/null 2>&1
+nginx >/dev/null 2>&1
+php-fpm  >/dev/null 2>&1
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
 
