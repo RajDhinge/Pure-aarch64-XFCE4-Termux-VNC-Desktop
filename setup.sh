@@ -153,10 +153,9 @@ mysqld_safe >/dev/null 2>&1
 nginx >/dev/null 2>&1
 php-fpm  >/dev/null 2>&1
 
-vncserver << EOD
-"mysql SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');"
-"CREATE DATABASE wordpress"
-"exit"
+mysql << EOD
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
+CREATE DATABASE wordpress
 EOD
 
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
