@@ -152,8 +152,14 @@ pkill php-fpm
 mysqld_safe >/dev/null 2>&1
 nginx >/dev/null 2>&1
 php-fpm  >/dev/null 2>&1
-printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
+vncserver << EOD
+"mysql SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');"
+"CREATE DATABASE wordpress"
+"exit"
+EOD
+
+printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
 sleep 3 && clear 
 figlet "VNC Active"
