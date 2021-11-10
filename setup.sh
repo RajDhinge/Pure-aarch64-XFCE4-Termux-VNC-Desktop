@@ -156,17 +156,18 @@ pkill php-fpm
 #php-fpm  >/dev/null 2>&1
 printf "${Yellow}[*] ${Green}Starting mysql\n"
 mysqld_safe &
+sleep 1
 printf "${Yellow}[*] ${Green}Starting nginx\n"
 nginx
 printf "${Yellow}[*] ${Green}Starting phpfpm\n"
 php-fpm
-
+sleep 1
 printf "${Yellow}[*] ${Green}creating db\n"
 mysql << EOD
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
 EOD
-exit 1
+
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
 sleep 3 && clear 
