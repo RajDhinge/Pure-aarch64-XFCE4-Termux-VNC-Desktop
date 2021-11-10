@@ -15,12 +15,11 @@ passwd ${username} << EOD
 ${password}
 ${password}
 EOD
-
-
-clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 termux-setup-storage << EOD
 "n"
 EOD
+
+clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
 #Update System
