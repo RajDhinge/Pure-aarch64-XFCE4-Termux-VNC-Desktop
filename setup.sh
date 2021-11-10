@@ -18,7 +18,7 @@ EOD
 termux-setup-storage << EOD
 "n"
 EOD
-
+rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
