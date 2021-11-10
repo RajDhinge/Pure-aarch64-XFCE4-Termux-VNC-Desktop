@@ -120,20 +120,14 @@ EOD
 export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 
-sleep 3 && clear 
-figlet "VNC Active"
-
+figlet "WordPress Setup"
+sleep 2
 printf "${Yellow}[*] ${Green}Setting up wordpress and nginx\n"
 #Setting up wordpress
 printf "${Yellow}[*] ${Green}Downloading WordPress\n"
-wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ >/dev/null 2>&1 
+wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ 
 printf "${Yellow}[*] ${Green}Extracting WordPress\n"
-unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html >/dev/null 2>&1 
-
-#Clean files
-rm -rf ip
-rm -rf livevnc
-rm /data/data/com.termux/files/usr/share/nginx/html/latest.zip
+unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
 
 printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
 mv /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
@@ -149,10 +143,17 @@ mysqld_safe & >/dev/null 2>&1
 nginx
 php-fpm
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
+
+sleep 3 && clear 
+figlet "VNC Active"
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
 printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
 printf "${Yellow}[*] ${Green}SSH is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}$password\n \n${White}"
 printf "\n${Yellow}[*] ${Green}Note: To use SSH a restart to termux is required as we have set up a new password\n \n${White}"
-
 sshd
+
+#Clean files
+rm -rf ip
+rm -rf livevnc
+rm -rf /data/data/com.termux/files/usr/share/nginx/html/latest.zip
