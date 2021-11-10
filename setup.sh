@@ -11,7 +11,7 @@ username=`whoami`
 password="1234567"
 
 #Setup root system password
-passwd ${username} << EOD
+passwd << EOD
 ${password}
 ${password}
 EOD
@@ -147,7 +147,7 @@ pkill nginx
 pkill php-fpm
 
 #Boot server
-#mysqld_safe >/dev/null 2>&1
+#mysqld_safe 
 #nginx >/dev/null 2>&1
 #php-fpm  >/dev/null 2>&1
 mysqld_safe &
