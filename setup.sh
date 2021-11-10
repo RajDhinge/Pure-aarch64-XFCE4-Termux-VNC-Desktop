@@ -116,12 +116,8 @@ figlet "VNC Active"
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
 printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n \n${White}"
+printf "${Yellow}[*] ${Green}Setting up SSH\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : 1234\n \n${White}"
 
-
-printf "\n\n${Yellow}[*] ${Green}Setting up SSH\n"
-printf "${Yellow}[*] Port : 8022\n"
-printf "${Yellow}[*] Local IP : `cat ip` \n"
-printf "${Yellow}[*] Password : 1234 \n"
 sshd
 
 #clean files
