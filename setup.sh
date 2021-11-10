@@ -63,8 +63,12 @@ packs=(
  
 for pack in "${packs[@]}"
 do
-    printf "${Yellow}[*] ${Green}Setting up $pack\n"
-    apt install $pack -y >/dev/null 2>&1
+    if [ `command -v $pack` ]; then
+        printf "${Yellow}[*] ${Green}$pack already installed\n"
+    else
+        printf "${Yellow}[*] ${Green}Setting up $pack\n"
+        apt install $pack -y >/dev/null 2>&1
+    fi
 done
 
 #Extra goodies
