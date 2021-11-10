@@ -145,19 +145,28 @@ mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
 printf "${Yellow}[*] ${Green}Attempting to start nginx\n"
 #kill active servers
+printf "${Yellow}[*] ${Green}Killing nginx\n"
 pkill nginx
+printf "${Yellow}[*] ${Green}Killing php-fpm\n"
 pkill php-fpm
 
 #Boot server
-mysqld_safe >/dev/null 2>&1
-nginx >/dev/null 2>&1
-php-fpm  >/dev/null 2>&1
+#mysqld_safe >/dev/null 2>&1
+#nginx >/dev/null 2>&1
+#php-fpm  >/dev/null 2>&1
+printf "${Yellow}[*] ${Green}Starting mysql\n"
+mysqld_safe &
+printf "${Yellow}[*] ${Green}Starting nginx\n"
+nginx
+printf "${Yellow}[*] ${Green}Starting phpfpm\n"
+php-fpm
 
+printf "${Yellow}[*] ${Green}creating db\n"
 mysql << EOD
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
 EOD
-
+exit 1
 printf "${Yellow}[*] ${Green}Wordpress is up\n"
 
 sleep 3 && clear 
