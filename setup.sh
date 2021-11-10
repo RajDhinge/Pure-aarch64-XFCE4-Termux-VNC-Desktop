@@ -11,12 +11,14 @@ ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 
-DIR="/data/data/com.termux/files/storage"
-if [ -d "$DIR" ]; then
-    echo ""
-else
-    termux-setup-storage
-fi
+termux-setup-storage
+username=`whoami`
+password="1234"
+
+passwd ${username} << EOD
+${password}
+${password}
+EOD
 
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
@@ -117,3 +119,4 @@ printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat i
 #clean files
 rm -rf ip
 rm -rf livevnc
+sshd
