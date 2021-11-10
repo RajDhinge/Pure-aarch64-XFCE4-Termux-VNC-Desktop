@@ -18,7 +18,9 @@ EOD
 
 
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
-termux-setup-storage
+termux-setup-storage << EOD
+"n"
+EOD
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
 #Update System
@@ -103,12 +105,10 @@ do
 done
 #Terminate all xfce sessions
 pkill xfce4-session >/dev/null 2>&1 &
-printf "${Yellow}[*] ${Green}Hitman left\n"
-printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
-printf "${Yellow}[*] ${Green}if prompted set up password\n"
-printf "${Yellow}[*] ${Green}input 'n' if asked for view-only password\n"
-
 rm -rf /data/data/com.termux/files/home/.vnc/passwd
+printf "${Yellow}[*] ${Green}Hitman left\n"
+
+printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 
 #Start VNC and xfce4-session
 vncserver << EOD
@@ -125,7 +125,7 @@ figlet "VNC Active"
 
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
-printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
+printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
 printf "${Yellow}[*] ${Green}SSH is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}$password\n \n${White}"
 
 sshd
