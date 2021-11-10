@@ -82,7 +82,7 @@ fi
 
 
 printf "\n${Yellow}[*] ${Green}Essential packs are now installed!\n"
-sleep 3 && clear 
+sleep 300 && clear 
 figlet "Setting VNC"
 
 
