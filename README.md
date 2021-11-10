@@ -1,5 +1,17 @@
 # Pure-aarch64-XFCE4-Termux-VNC-Desktop
 
+# Installation steps
+
+* Run the below command in your termux application
+
+```
+apt update && 
+apt install git -y && 
+git clone https://github.com/RajDhinge/Pure-aarch64-XFCE4-Termux-VNC-Desktop.git && 
+cd Pure-aarch64-XFCE4-Termux-VNC-Desktop && 
+chmod +x setup.sh && bash setup.sh
+```
+
 * Auto updates the Termux system
 
 ![update](https://user-images.githubusercontent.com/22621881/141097338-f5e44225-7a86-42d6-8e62-d08a5d646bfd.png)
