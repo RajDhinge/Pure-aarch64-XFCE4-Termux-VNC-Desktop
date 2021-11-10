@@ -30,5 +30,5 @@ cd ~
 
 * Shows VNC session details 
 
-![active](https://user-images.githubusercontent.com/22621881/141124698-8fcff30d-0f1e-4c2f-a3a8-e05ef92329fe.png)
+![active](https://user-images.githubusercontent.com/22621881/141125051-a3d9481c-dc36-423c-b867-a99274b97e64.png)
 
