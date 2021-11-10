@@ -106,3 +106,4 @@ printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat i
 #clean files
 rm -rf ip
 rm -rf livevnc
+cd ~
