@@ -11,7 +11,7 @@ ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 
-DIR="~/storage"
+DIR="/data/data/com.termux/files/storage"
 if [ -d "$DIR" ]; then
     echo ""
 else
