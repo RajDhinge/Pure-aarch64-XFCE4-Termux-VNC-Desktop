@@ -8,7 +8,7 @@ Red='\033[0;31m'
 #Get ip address
 ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' > ip
 username=`whoami`
-password="1234"
+password="1234567"
 
 #Setup root system password
 passwd ${username} << EOD
@@ -108,8 +108,15 @@ printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 printf "${Yellow}[*] ${Green}if prompted set up password\n"
 printf "${Yellow}[*] ${Green}input 'n' if asked for view-only password\n"
 
+rm -rf /data/data/com.termux/files/home/.vnc/passwd
+
 #Start VNC and xfce4-session
-vncserver 
+vncserver << EOD
+${password}
+${password}
+"n"
+EOD
+
 export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 
@@ -118,8 +125,8 @@ figlet "VNC Active"
 
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
-printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n \n${White}"
-printf "${Yellow}[*] ${Green}SSH is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}1234\n \n${White}"
+printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
+printf "${Yellow}[*] ${Green}SSH is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}$password\n \n${White}"
 
 sshd
 
