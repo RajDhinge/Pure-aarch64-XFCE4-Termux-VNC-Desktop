@@ -120,14 +120,22 @@ EOD
 export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 
-figlet "WordPress Setup"
+figlet "Setting"
+figlet "Wordpress" 
 sleep 2
 printf "${Yellow}[*] ${Green}Setting up wordpress and nginx\n"
 #Setting up wordpress
-printf "${Yellow}[*] ${Green}Downloading WordPress\n"
-wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ 
-printf "${Yellow}[*] ${Green}Extracting WordPress\n"
-unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
+
+DIR="/data/data/com.termux/files/usr/share/nginx/html/wordpress"
+if [ -d "$DIR" ]; then
+  echo "wordpress already installed!"
+else
+    printf "${Yellow}[*] ${Green}Downloading WordPress\n"
+    wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ 
+    printf "${Yellow}[*] ${Green}Extracting WordPress\n"
+    unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
+fi
+
 
 printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
 mv /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
