@@ -7,6 +7,10 @@ White='\033[1;33m'
 Red='\033[0;31m' 
 #Get ip address
 ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' > ip
+passwd ${username} << EOD
+${password}
+${password}
+EOD
 
 
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
@@ -15,7 +19,7 @@ termux-setup-storage
 username=`whoami`
 password="1234"
 
-passwd ${username} >/dev/null << EOD
+passwd ${username} << EOD
 ${password}
 ${password}
 EOD
