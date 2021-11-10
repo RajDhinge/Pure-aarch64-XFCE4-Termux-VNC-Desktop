@@ -1,1 +1,1 @@
-# Pure-Termux-XFCE4-aarch64-VNC-Desktop
+# Pure-aarch64-XFCE4-Termux-VNC-Desktop
