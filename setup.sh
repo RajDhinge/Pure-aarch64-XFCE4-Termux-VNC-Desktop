@@ -10,7 +10,14 @@ ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 
 clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
-termux-setup-storage
+
+DIR="~/storage"
+if [ -d "$DIR" ]; then
+    echo ""
+else
+    termux-setup-storage
+fi
+
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
 #Update System
