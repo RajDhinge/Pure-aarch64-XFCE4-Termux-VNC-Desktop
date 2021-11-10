@@ -65,7 +65,7 @@ packs=(
 for pack in "${packs[@]}"
 do
     dpkg -L $pack >/dev/null 2&>1
-    if [ $? ]; then
+    if [ $? = 0 ]; then
         printf "${Yellow}[*] ${Green}$pack already installed\n"
     else
         printf "${Yellow}[*] ${Green}Setting up $pack\n"
