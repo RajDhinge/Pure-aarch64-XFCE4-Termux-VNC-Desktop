@@ -66,7 +66,7 @@ if [ `command -v adb` ]; then
 fi
 
 
-figlet "packages installed!"
+printf "\n${Yellow}[*] ${Green}Essential packs are now installed!\n"
 sleep 3 && clear 
 figlet "Setting VNC"
 
@@ -106,4 +106,3 @@ printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat i
 #clean files
 rm -rf ip
 rm -rf livevnc
-cd ~
