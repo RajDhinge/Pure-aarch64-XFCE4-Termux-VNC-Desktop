@@ -15,7 +15,7 @@ termux-setup-storage
 username=`whoami`
 password="1234"
 
-passwd ${username} << EOD
+passwd ${username} >/dev/null << EOD
 ${password}
 ${password}
 EOD
@@ -116,7 +116,7 @@ figlet "VNC Active"
 termux-wake-lock
 printf "${Yellow}[*] ${Green}Wavelock aquired\n"
 printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n \n${White}"
-printf "${Yellow}[*] ${Green}Setting up SSH\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : 1234\n \n${White}"
+printf "${Yellow}[*] ${Green}Setting up SSH\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}1234\n \n${White}"
 
 sshd
 
