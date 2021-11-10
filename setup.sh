@@ -74,6 +74,8 @@ figlet "Setting VNC"
 printf "${Yellow}[*] ${Green}Setting up Xfce session\n"
 printf "${Green} Please wait... \n Your ip is ${Yellow}`cat ip`${Green} \n this may take a while...\n" && sleep 1
 printf "${Yellow}[*] ${Green}Terminating active vnc server's if any \n"
+printf "${Yellow}[*] ${Green}Calling hitman \n"
+printf "${Yellow}[*] ${Green}Hitman arrived\n"
 vncserver -list|grep :|awk '{print $1}'|grep : > livevnc  && sleep 5
 
 #Terminate and clean vnc server
@@ -85,9 +87,9 @@ do
     fi
     vncserver -kill $PORT 
 done
-
 #Terminate all xfce sessions
 pkill xfce4-session >/dev/null 2>&1 &
+printf "${Yellow}[*] ${Green}Hitman left\n"
 printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 printf "${Yellow}[*] ${Green}if prompted set up password\n"
 printf "${Yellow}[*] ${Green}input 'n' if asked for view-only password\n"
@@ -100,9 +102,7 @@ xfce4-session >/dev/null 2>&1 &
 sleep 3 && clear 
 figlet "VNC Active"
 
-printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}5091${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n\n"
-printf "${White}\n${White}"
-
+printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n \n${White}"
 #clean files
 rm -rf ip
 rm -rf livevnc
