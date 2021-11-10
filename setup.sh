@@ -125,17 +125,21 @@ figlet "VNC Active"
 
 printf "${Yellow}[*] ${Green}Setting up wordpress and nginx\n"
 #Setting up wordpress
-wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ >/dev/null 2>&1 &&
-unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html >/dev/null 2>&1 &&
+printf "${Yellow}[*] ${Green}Downloading WordPress\n"
+wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ >/dev/null 2>&1 
+printf "${Yellow}[*] ${Green}Extracting WordPress\n"
+unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html >/dev/null 2>&1 
 
 #Clean files
 rm -rf ip
 rm -rf livevnc
 rm /data/data/com.termux/files/usr/share/nginx/html/latest.zip
 
+printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
 mv /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
 mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
+printf "${Yellow}[*] ${Green}Attempting to start nginx\n"
 #kill active servers
 pkill nginx
 pkill php-fpm
