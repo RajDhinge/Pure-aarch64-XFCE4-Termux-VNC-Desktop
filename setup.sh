@@ -23,6 +23,7 @@ sleep 3 && clear && neofetch
 
 #Installing essential packages & goodies
 packs=(
+    'figlet'
     'openssh' 
     'nginx' 
     'php-fpm' 
@@ -65,9 +66,13 @@ if [ `command -v adb` ]; then
 fi
 
 
-printf "${Yellow}[*] ${Green}Setting up Xfce session\n"
+figlet "packages installed!"
+sleep 3 && clear 
+figlet "Setting VNC"
 
-printf "${Green} Please wait... \n setting up VNC on ${Yellow}`cat ip`${Green} \n this may take a while...\n" && sleep 1
+
+printf "${Yellow}[*] ${Green}Setting up Xfce session\n"
+printf "${Green} Please wait... \n Your ip is ${Yellow}`cat ip`${Green} \n this may take a while...\n" && sleep 1
 printf "${Yellow}[*] ${Green}Terminating active vnc server's if any \n"
 vncserver -list|grep :|awk '{print $1}'|grep : > livevnc  && sleep 5
 
@@ -83,7 +88,7 @@ done
 
 #Terminate all xfce sessions
 pkill xfce4-session >/dev/null 2>&1 &
-printf "${Yellow}[*] ${Green}We are about to starting vnc server\n"
+printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 printf "${Yellow}[*] ${Green}if prompted set up password\n"
 printf "${Yellow}[*] ${Green}input 'n' if asked for view-only password\n"
 
@@ -92,8 +97,11 @@ vncserver
 export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 
+sleep 3 && clear 
+figlet vnc
+
 printf "${White}--------------------------------------\n${White}"
-printf "${Yellow}[*] ${Green}Done! Vnc is now active\n IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}5091${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n "
+printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}5091${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n "
 printf "${White}--------------------------------------\n${White}"
 
 #clean files
