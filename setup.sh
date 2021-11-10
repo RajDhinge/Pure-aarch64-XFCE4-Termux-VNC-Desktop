@@ -140,8 +140,8 @@ rm -rf ip
 rm -rf livevnc
 rm /data/data/com.termux/files/usr/share/nginx/html/latest.zip
 
-mv -rf /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
-mv -rf nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
+mv /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
+mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
 #kill active servers
 pkill nginx
