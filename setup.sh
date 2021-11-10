@@ -138,31 +138,23 @@ else
     unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
 fi
 
-printf "${Yellow}[*] ${Green}Setting up nginx config files\n"
 mkdir /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
 mv sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
 mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
 
-printf "${Yellow}[*] ${Green}Attempting to start nginx\n"
 #kill active servers
-printf "${Yellow}[*] ${Green}Killing nginx\n"
 pkill nginx
-printf "${Yellow}[*] ${Green}Killing php-fpm\n"
 pkill php-fpm
 
 #Boot server
 #mysqld_safe >/dev/null 2>&1
 #nginx >/dev/null 2>&1
 #php-fpm  >/dev/null 2>&1
-printf "${Yellow}[*] ${Green}Starting mysql\n"
 mysqld_safe &
 sleep 1
-printf "${Yellow}[*] ${Green}Starting nginx\n"
 nginx
-printf "${Yellow}[*] ${Green}Starting phpfpm\n"
 php-fpm
 sleep 1
-printf "${Yellow}[*] ${Green}creating db\n"
 mysql << EOD
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
