@@ -9,7 +9,7 @@ Red='\033[0;31m'
 ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' > ip
 
 
-printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
+clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
 printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
 
 #Update System
@@ -28,8 +28,7 @@ packs=(
     'nginx' 
     'php-fpm' 
     'mariadb' 
-    'otter-browser'
-    'netsurf'
+    'otter-browser' 
     'x11-repo' 
     'xfce4' 
     'zsh' 
@@ -99,18 +98,11 @@ export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 
 sleep 3 && clear 
-figlet vnc
+figlet "VNC Active"
 
-printf "${White}--------------------------------------\n${White}"
-printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}5091${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n "
-printf "${White}--------------------------------------\n${White}"
+printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}5091${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n\n"
+printf "${White}\n${White}"
 
 #clean files
 rm -rf ip
 rm -rf livevnc
-
-#Setup Wordpress
-#wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ &&
-#unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html &&
-#extras
-#rm /data/data/com.termux/files/usr/share/nginx/html/latest.zip
