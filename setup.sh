@@ -104,7 +104,9 @@ xfce4-session >/dev/null 2>&1 &
 sleep 3 && clear 
 figlet "VNC Active"
 
-printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n you may even 'Aquire wavelock' on termux\n \n${White}"
+termux-wake-lock
+printf "${Yellow}[*] ${Green}Wavelock aquired\n"
+printf "${Yellow}[*] ${Green}Done! Vnc is now active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n keep this termux session active\n \n${White}"
 #clean files
 rm -rf ip
 rm -rf livevnc
