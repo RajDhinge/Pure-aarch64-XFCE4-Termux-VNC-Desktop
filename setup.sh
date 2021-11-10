@@ -131,6 +131,23 @@ printf "\n\n${Yellow}[*] ${Green}Note: To use SSH a restart to termux is require
 
 sshd
 
-#clean files
+#Setting up wordpress
+wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ >/dev/null 2>&1 &&
+unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html >/dev/null 2>&1 &&
+
+#Clean files
 rm -rf ip
 rm -rf livevnc
+rm /data/data/com.termux/files/usr/share/nginx/html/latest.zip
+
+mv -rf /sites-available /data/data/com.termux/files/usr/etc/nginx/sites-available
+mv -rf nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
+
+#kill active servers
+pkill nginx
+pkill php-fpm
+
+#Boot server
+mysqld_safe & >/dev/null 2>&1
+nginx
+php-fpm
