@@ -132,6 +132,8 @@ if [ -d "$DIR" ]; then
 else
     printf "${Yellow}[*] ${Green}Downloading WordPress\n"
     wget https://wordpress.org/latest.zip -P /data/data/com.termux/files/usr/share/nginx/html/ 
+    wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php -P /data/data/com.termux/files/usr/share/nginx/html/ 
+    mv /data/data/com.termux/files/usr/share/nginx/html/adminer-4.8.1-en.php /data/data/com.termux/files/usr/share/nginx/html/adminer.php
     printf "${Yellow}[*] ${Green}Extracting WordPress\n"
     unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
 fi
