@@ -2,7 +2,7 @@
 
 # Installation steps
 
-* Copy & run the below command in your termux application
+* Copy & run the whole command in your termux application
 
 ```
 apt update && 
