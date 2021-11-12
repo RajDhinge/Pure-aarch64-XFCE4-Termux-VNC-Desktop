@@ -79,7 +79,10 @@ cd ~
 
 # Wordpress default configuration details
 
-![config wordpress](https://user-images.githubusercontent.com/22621881/141437902-4950ba6c-2246-49a4-98df-b939bfd82d60.png)
+Database name : wordpress
+Username : root
+password : wordpress
+Table prefix : wp_ ( `you can set this as per your need's` )
 
 
 # Known Issues
