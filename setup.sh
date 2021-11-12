@@ -62,6 +62,7 @@ packs=(
     'htop' 
     'git' 
     'zip' 
+    'php-imagick'
     'tumbler'
     'proot-distro'
     'xfce4-clipman-plugin'
