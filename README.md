@@ -13,6 +13,7 @@ cd Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 chmod +x setup.sh && 
 bash setup.sh &&
 cd .. &&
+rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 cd ~
 ```
 
