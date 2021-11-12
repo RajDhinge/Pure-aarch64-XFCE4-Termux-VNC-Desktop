@@ -57,6 +57,7 @@ cd ~
     `xfce4-calculator-plugin`
     `geany-plugins`
     `xfce4-datetime-plugin`
+5. Updates your termux
 
 # Installation Screens
 
