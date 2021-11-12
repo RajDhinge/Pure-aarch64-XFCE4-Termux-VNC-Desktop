@@ -7,6 +7,12 @@
 # Last modified: Fri Nov 12 10:48:26 AM IST 2021
 #################################################
 
+    #Setup root system password
+    passwd <<EOD
+        ${password}
+        ${password}
+    EOD
+    
 #initialize
 initvar() {
     #Variables
@@ -19,11 +25,6 @@ initvar() {
     username=`whoami`
     password="1234567"
 
-    #Setup root system password
-    passwd <<EOD
-        ${password}
-        ${password}
-    EOD
     
     termux-setup-storage << EOD
         "n"
