@@ -87,12 +87,6 @@ cd ~
 | password          | wordpress     |
 | Table prefix      | wp_           |
 
- : wordpress
-Username : root
-password : wordpress
-Table prefix : wp_ ( `you can set this as per your need's` )
-
-
 # Known Issues
 
 [Wordpress]
