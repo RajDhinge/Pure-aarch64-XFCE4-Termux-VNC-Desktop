@@ -41,10 +41,10 @@ termuxupdate() {
     #Update System
     apt update  >/dev/null 2>&1
  
- apt upgrade << EOD
- "Y"
- "Y"
- EOD
+apt upgrade << EOD
+"Y"
+"Y"
+EOD
  
     apt install neofetch -y >/dev/null 2>&1 
     printf "${Yellow}[*] ${Green}Termux system updated\n"
