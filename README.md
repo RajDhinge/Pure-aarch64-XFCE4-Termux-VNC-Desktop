@@ -23,9 +23,10 @@ cd ~
 
 # Features out of the box
 
-1. Auto configure VNC 
+1. Auto configure `VNC` 
 2. Set up essential packages
-3. Wordpress will be set up out of the box uses nginx server and php-fpm
+3. Wordpress will be set up out of the box uses `mysql` , `nginx server` and `php-fpm`
+4. `adminer.php` file will be automatically placed in your `html` directory
 
 # Installation Screens
 
