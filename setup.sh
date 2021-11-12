@@ -22,7 +22,7 @@ initvar() {
     password="1234567"
     
     #Setup root system password
-passwd << EOD
+passwd root << EOD
 ${password}
 ${password}
 EOD
