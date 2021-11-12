@@ -147,9 +147,9 @@ else
 fi
 
 mkdir /data/data/com.termux/files/usr/etc/nginx/sites-available
-mv sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
-mv nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
-mv php.ini /data/data/com.termux/files/usr/lib/php.ini
+cp -f sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
+cp -f nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
+cp -f php.ini /data/data/com.termux/files/usr/lib/php.ini
 
 #kill active servers
 pkill nginx
