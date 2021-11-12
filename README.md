@@ -10,7 +10,7 @@
 
 ```
 clear && 
-apt -q update && 
+pkg update && 
 apt -q install git -y && 
 rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 git clone https://github.com/RajDhinge/Pure-aarch64-XFCE4-Termux-VNC-Desktop.git && 
