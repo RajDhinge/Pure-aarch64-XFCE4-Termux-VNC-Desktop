@@ -22,10 +22,10 @@ initvar() {
     password="1234567"
     
     #Setup root system password
-passwd << EOD
-${password}
-${password}
-EOD
+    passwd << EOD
+    ${password}
+    ${password}
+    EOD
         
     #termux-setup-storage << EOD
     #    "n"
