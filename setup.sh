@@ -215,6 +215,7 @@ cleanenv() {
     cd .. &&
     rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
     echo "fish" > /data/data/com.termux/files/home/.bashrc
+    cd ~
 }
 
 mainexec() { 
