@@ -7,11 +7,7 @@
 # Last modified: Fri Nov 12 10:48:26 AM IST 2021
 #################################################
 
-    #Setup root system password
-    passwd <<EOD
-        ${password}
-        ${password}
-    EOD
+
     
 #initialize
 initvar() {
@@ -24,11 +20,16 @@ initvar() {
     ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' > ip
     username=`whoami`
     password="1234567"
-
     
-    termux-setup-storage << EOD
-        "n"
-    EOD
+    #Setup root system password
+    #passwd << EOD
+    #    ${password}
+    #    ${password}
+    #EOD
+        
+    #termux-setup-storage << EOD
+    #    "n"
+    #EOD
 }
 
 
