@@ -42,6 +42,7 @@ sleep 3 && clear && neofetch
 packs=(
     'figlet'
     'fish'
+    'tree'
     'openssh' 
     'nginx' 
     'php-fpm' 
