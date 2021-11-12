@@ -5,7 +5,7 @@
 # Installation steps
 * Download and install F-Droid APK from https://f-droid.org/F-Droid.apk
 * Open f-droid and Search for Termux
-* Download and open Termux app to your android.
+* install and open Termux app to your android using F-droid.
 * Copy & run the whole command in your termux application
 
 ```
