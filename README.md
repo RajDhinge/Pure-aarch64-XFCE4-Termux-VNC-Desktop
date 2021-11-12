@@ -46,15 +46,13 @@ cd ~
   [ Rest API encountered an error]
   [ Your site could not complete loopback request ]
 
-# References
-
-[Links]
+# Reference links
 
 * https://www.cyberciti.biz/faq/how-to-configure-nginx-for-wordpress-permalinks/
 * https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
 * https://blog.hubspot.com/website/413-request-entity-too-large
 
-  [Goodies]
+[Goodies]
 
-  * https://github.com/rajkumardusad/MyServer
-  * https://github.com/modded-ubuntu/modded-ubuntu
+* https://github.com/rajkumardusad/MyServer
+* https://github.com/modded-ubuntu/modded-ubuntu
