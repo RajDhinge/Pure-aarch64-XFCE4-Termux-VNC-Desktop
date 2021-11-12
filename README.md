@@ -21,6 +21,14 @@ rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 cd ~
 ```
 
+# Features out of the box
+
+1. Auto configure VNC 
+2. Set up essential packages
+3. Wordpress will be set up out of the box uses nginx server and php-fpm
+
+# Installation Screens
+
 * Auto updates the Termux system
 
 ![update](https://user-images.githubusercontent.com/22621881/141097338-f5e44225-7a86-42d6-8e62-d08a5d646bfd.png)
