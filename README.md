@@ -6,7 +6,7 @@
 * Download and install F-Droid APK from https://f-droid.org/F-Droid.apk
 * Open f-droid and Search for Termux
 * install and open Termux app to your android using F-droid.
-* Copy & run the whole command in your termux application
+* Copy & run the whole command as below in your termux application
 
 ```
 apt update && 
