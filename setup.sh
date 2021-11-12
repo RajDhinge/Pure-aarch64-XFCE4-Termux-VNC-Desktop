@@ -39,7 +39,7 @@ termuxupdate() {
     printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
     printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
     #Update System
-    apt update  >/dev/null 2>&1
+    pkg update  >/dev/null 2>&1
  
 apt upgrade << EOD
 "Y"
