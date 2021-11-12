@@ -36,7 +36,7 @@ EOD
 
 #Termux system update
 termuxupdate() {
-    clear && printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
+    printf "${Yellow}[*] ${Green}Getting things ready!\n" && sleep 1
     printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
     #Update System
     apt update  >/dev/null 2>&1
@@ -52,7 +52,7 @@ EOD
 
 #Essential packs
 installpacks() {
-    clear && neofetch
+    neofetch
     #Installing essential packages & goodies
     packs=(
         'figlet'
@@ -112,7 +112,6 @@ installpacks() {
 
 #Setup VNC
 setupvnc() {
-    clear
     figlet "Setting VNC"
     printf "${Yellow}[*] ${Green}About to set up your VNC Desktop!\n"
     printf "${Yellow}[*] ${Green}Setting up Xfce session\n"
@@ -151,7 +150,6 @@ EOD
 
 #Setting up WordPress, nginx engine and php-fpm f
 setupwordpress() {
-    clear
     figlet "Setting"
     figlet "Wordpress" 
     sleep 2
@@ -214,20 +212,22 @@ cleanenv() {
     rm -rf adbfiles >/dev/null 2>&1 &
     cd ~
     rm -rf adbfiles >/dev/null 2>&1 &
+    echo "fish" > /data/data/com.termux/files/home/.bashrc
 }
 
-initvar
-    clear
-termuxupdate
-    sleep 3
-installpacks
-    sleep 3 
-sshd
-setupvnc
-    sleep 3 
-setupwordpress
-    sleep 3
-summary
-cleanenv
+mainexec() { 
+    initvar && clear
+    termuxupdate && clear
+        sleep 3
+    installpacks && clear
+        sleep 3 
+    sshd
+    setupvnc && clear
+        sleep 3 
+    setupwordpress && clear
+        sleep 3
+    summary
+    cleanenv
+}
 
-echo "fish" > /data/data/com.termux/files/home/.bashrc
+mainexec
