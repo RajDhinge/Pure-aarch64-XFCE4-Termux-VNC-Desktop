@@ -33,6 +33,10 @@ cd ~
 
 ![active](https://user-images.githubusercontent.com/22621881/141125051-a3d9481c-dc36-423c-b867-a99274b97e64.png)
 
+* Wordpress default configuration details
+
+![config wordpress](https://user-images.githubusercontent.com/22621881/141437902-4950ba6c-2246-49a4-98df-b939bfd82d60.png)
+
 
 # Known Issues
 
