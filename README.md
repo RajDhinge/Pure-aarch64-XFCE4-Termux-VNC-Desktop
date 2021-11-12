@@ -3,7 +3,7 @@
 ![pure xfce](https://user-images.githubusercontent.com/22621881/141477898-e20cf10c-b988-4279-9d8e-8adbbd084e75.png)
 
 # Installation steps
-
+* Download Termux app to your android.
 * Copy & run the whole command in your termux application
 
 ```
