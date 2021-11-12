@@ -3,8 +3,8 @@
 ![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
 
 # Installation steps
-* Download and install F-Droid APK from https://f-droid.org/F-Droid.apk
-* Open f-droid and Search for Termux
+* Download and install `F-Droid` APK from https://f-droid.org/F-Droid.apk
+* Open f-droid and Search for `Termux`
 * install and open Termux app to your android using F-droid.
 * Copy & run the whole command as below in your termux application
 
