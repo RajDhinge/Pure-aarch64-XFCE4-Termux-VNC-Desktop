@@ -9,7 +9,7 @@
 * Copy & run the whole command as below in your termux application
 
 ```
-clear && apt update >/dev/null && apt install git -y >/dev/null && 
+clear && apt -q update && apt -q install git -y && 
 rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 git clone https://github.com/RajDhinge/Pure-aarch64-XFCE4-Termux-VNC-Desktop.git && 
 cd Pure-aarch64-XFCE4-Termux-VNC-Desktop && 
