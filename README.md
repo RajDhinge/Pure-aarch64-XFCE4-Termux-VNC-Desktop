@@ -29,6 +29,7 @@ cd ~
 4. Auto set-up essential packages
     `figlet`
     `fish`
+    `tree`
     `openssh` 
     `nginx` 
     `php-fpm` 
