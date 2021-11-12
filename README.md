@@ -105,7 +105,6 @@ cd ~
 [Wordpress]
 
 * The scheduled event, recovery_mode_clean_expired_keys, failed to run. Your site still works, but this may indicate that scheduling posts or automated updates may not work as intended.
-* The setting for post_max_size is smaller than upload_max_filesize, this could cause some problems when trying to upload files.
 * Website dosent use HTTPS
 * Warning The optional module, imagick, is not installed, or has been disabled.
 * Error: cURL error 1: Received HTTP/0.9 when not allowed (http_request_failed)
