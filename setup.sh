@@ -212,10 +212,7 @@ cleanenv() {
     rm -rf adbfiles >/dev/null 2>&1 &
     cd ~
     rm -rf adbfiles >/dev/null 2>&1 &
-    cd .. &&
-    rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
     echo "fish" > /data/data/com.termux/files/home/.bashrc
-    cd ~
 }
 
 mainexec() { 
