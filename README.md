@@ -9,16 +9,11 @@
 * Copy & run the whole command as below in your termux application
 
 ```
-apt update && 
-apt install git -y && 
+clear && apt update >/dev/null && apt install git -y >/dev/null && 
 rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 git clone https://github.com/RajDhinge/Pure-aarch64-XFCE4-Termux-VNC-Desktop.git && 
 cd Pure-aarch64-XFCE4-Termux-VNC-Desktop && 
-chmod +x setup.sh && 
-bash setup.sh &&
-cd .. &&
-rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
-cd ~
+chmod +x setup.sh && bash setup.sh
 ```
 
 # Features out of the box
