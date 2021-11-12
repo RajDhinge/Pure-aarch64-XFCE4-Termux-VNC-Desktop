@@ -1,6 +1,6 @@
 # Pure-aarch64-XFCE4-Termux-VNC-Desktop
 
-![pure xfce](https://user-images.githubusercontent.com/22621881/141477898-e20cf10c-b988-4279-9d8e-8adbbd084e75.png)
+![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
 
 # Installation steps
 * Download and install F-Droid APK from https://f-droid.org/F-Droid.apk
