@@ -41,6 +41,7 @@ sleep 3 && clear && neofetch
 #Installing essential packages & goodies
 packs=(
     'figlet'
+    'fish'
     'openssh' 
     'nginx' 
     'php-fpm' 
@@ -183,3 +184,5 @@ sshd
 rm -rf ip
 rm -rf livevnc
 rm -rf /data/data/com.termux/files/usr/share/nginx/html/latest.zip
+
+echo "fish" > /data/data/com.termux/files/home/.bashrc
