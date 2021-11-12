@@ -62,6 +62,7 @@ packs=(
     'htop' 
     'git' 
     'zip' 
+    'ttyd'
     'php-imagick'
     'tumbler'
     'proot-distro'
