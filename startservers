@@ -6,7 +6,7 @@
 #
 # Last modified: Fri Nov 13 1:31:26 AM IST 2021
 #################################################
-
+clear
 #Variables
 Green='\033[0;32m' 
 Yellow='\033[1;33m'
