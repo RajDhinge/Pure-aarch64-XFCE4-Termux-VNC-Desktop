@@ -216,17 +216,17 @@ cleanenv() {
 }
 
 mainexec() { 
-    initvar && clear
-    termuxupdate && clear
+    clear && initvar
+    clear && termuxupdate
         sleep 3
-    installpacks && clear
+    clear && installpacks
         sleep 3 
-    sshd
-    setupvnc && clear
+    clear && sshd
+    clear && setupvnc
         sleep 3 
-    setupwordpress && clear
+    clear && setupwordpress
         sleep 3
-    summary
+    clear && summary
     cleanenv
 }
 
