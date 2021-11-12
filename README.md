@@ -23,10 +23,40 @@ cd ~
 
 # Features out of the box
 
-1. Auto configure `VNC` 
-2. Set up essential packages
-3. Wordpress will be set up out of the box uses `mysql` , `nginx server` and `php-fpm`
-4. `adminer.php` file will be automatically placed in your `html` directory
+1. Auto configure `VNC` with password `1234567`
+2. Wordpress will be set up out of the box uses `mysql` , `nginx server` and `php-fpm`
+3. `adminer.php` file will be automatically placed in your `html` directory
+4. Auto set-up essential packages
+    `figlet`
+    `fish`
+    `openssh` 
+    `nginx` 
+    `php-fpm` 
+    `mariadb` 
+    `otter-browser`
+    `netsurf`
+    `x11-repo` 
+    `xfce4` 
+    `zsh` 
+    `tigervnc` 
+    `tsu` 
+    `xfce4-terminal` 
+    `dosbox` 
+    `wget` 
+    `lxqt-archiver` 
+    `nmap` 
+    `termux-api` 
+    `htop` 
+    `git` 
+    `zip` 
+    `ttyd`
+    `php-imagick`
+    `tumbler`
+    `proot-distro`
+    `xfce4-clipman-plugin`
+    `xfce4-calculator-plugin`
+    `geany-plugins`
+    `xfce4-datetime-plugin`
 
 # Installation Screens
 
@@ -46,7 +76,7 @@ cd ~
 
 ![active](https://user-images.githubusercontent.com/22621881/141125051-a3d9481c-dc36-423c-b867-a99274b97e64.png)
 
-* Wordpress default configuration details
+# Wordpress default configuration details
 
 ![config wordpress](https://user-images.githubusercontent.com/22621881/141437902-4950ba6c-2246-49a4-98df-b939bfd82d60.png)
 
