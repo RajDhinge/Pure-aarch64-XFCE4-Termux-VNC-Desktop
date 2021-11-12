@@ -23,13 +23,14 @@ initvar() {
     
     #Setup root system password
 passwd << EOD
-    ${password}
-    ${password}
-    EOD
+${password}
+${password}
+EOD
         
-    #termux-setup-storage << EOD
-    #    "n"
-    #EOD
+termux-setup-storage << EOD
+"n"
+EOD
+
 }
 
 
@@ -39,10 +40,12 @@ termuxupdate() {
     printf "${Yellow}[*] ${Green}Updating your termux ${Green}system\n${White}"
     #Update System
     apt update  >/dev/null 2>&1
-    apt upgrade << EOD
-        "Y"
-        "Y"
-        EOD
+ 
+ apt upgrade << EOD
+ "Y"
+ "Y"
+ EOD
+ 
     apt install neofetch -y >/dev/null 2>&1 
     printf "${Yellow}[*] ${Green}Termux system updated\n"
 }
@@ -136,11 +139,11 @@ setupvnc() {
     printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 
     #Start VNC and xfce4-session
-    vncserver << EOD
-    ${password}
-    ${password}
-    "n"
-    EOD
+vncserver << EOD
+${password}
+${password}
+"n"
+EOD
 
     export DISPLAY=:1
     xfce4-session >/dev/null 2>&1 &
@@ -184,10 +187,11 @@ setupwordpress() {
     nginx
     php-fpm
     sleep 1
-    mysql << EOD
-    SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
-    CREATE DATABASE wordpress
-    EOD
+    
+mysql << EOD
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
+CREATE DATABASE wordpress
+EOD
     
     printf "${Yellow}[*] ${Green}Wordpress is up\n"
 } 
