@@ -79,7 +79,15 @@ cd ~
 
 # Wordpress default configuration details
 
-Database name : wordpress
+| Key               |     Value     |
+|-------------------|---------------|
+| Database name     | wordpress     |
+| Database host     | 127.0.0.1     |
+| Username          | root          |
+| password          | wordpress     |
+| Table prefix      | wp_           |
+
+ : wordpress
 Username : root
 password : wordpress
 Table prefix : wp_ ( `you can set this as per your need's` )
