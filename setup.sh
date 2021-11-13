@@ -50,32 +50,41 @@ installpacks() {
     #Installing essential packages & goodies
     packs=(
         'figlet'
-        'fish'
-        'tree'
+#Misc        
+        'termux-api' 
+#Deamons        
         'openssh' 
+        'ttyd'
+#developement
         'nginx' 
         'php-fpm' 
         'mariadb' 
+        'nodejs'
+        'composer' 
+#Recommended        
+        'fish'
+        'tree'
+        'tsu' 
+        'wget'
+        'zip' 
+#Browsers        
         'otter-browser'
         'netsurf'
+#Enviroments        
+        'proot-distro'
+        'zsh' 
+        'dosbox' 
+        'htop' 
+#Network        
+        'nmap' 
+#XFCE4gui
         'x11-repo' 
         'xfce4' 
-        'zsh' 
-        'tigervnc' 
-        'tsu' 
-        'xfce4-terminal' 
-        'dosbox' 
-        'wget' 
-        'lxqt-archiver' 
-        'nmap' 
-        'termux-api' 
-        'htop' 
-        'composer' 
-        'zip' 
-        'ttyd'
-        'php-imagick'
+#XFCE4Essentials
         'tumbler'
-        'proot-distro'
+        'tigervnc' 
+        'xfce4-terminal' 
+        'lxqt-archiver' 
         'xfce4-clipman-plugin'
         'xfce4-calculator-plugin'
         'geany-plugins'
