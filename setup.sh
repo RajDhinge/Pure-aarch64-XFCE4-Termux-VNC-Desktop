@@ -149,7 +149,7 @@ EOD
 
     export DISPLAY=:1
     xfce4-session >/dev/null 2>&1 &
-    sleep 3
+    sleep 2
 }
 
 #Setting up WordPress, nginx engine and php-fpm f
@@ -195,7 +195,9 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
 EOD
     
+    printf "${Yellow}[*] `/data/data/com.termux/files/usr/etc/init.d/mysql status`"
     printf "${Yellow}[*] ${Green}Wordpress is up\n"
+    sleep 2
 } 
 
 #summary
