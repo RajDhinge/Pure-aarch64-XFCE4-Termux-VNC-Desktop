@@ -1,7 +1,3 @@
-# Pure-aarch64-XFCE4-Termux-VNC-Desktop
-
-![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
-
 # Installation steps
 * Download and install `F-Droid` APK from https://f-droid.org/F-Droid.apk
 * Open f-droid and Search for `Termux`
@@ -21,6 +17,10 @@ cd .. &&
 rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 cd ~
 ```
+
+# Pure-aarch64-XFCE4-Termux-VNC-Desktop
+
+![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
 
 # Features out of the box
 
