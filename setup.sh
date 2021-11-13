@@ -171,8 +171,8 @@ setupwordpress() {
         printf "${Yellow}[*] ${Green}Extracting WordPress\n"
         unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
     fi
-
-    mkdir /data/data/com.termux/files/usr/etc/nginx/sites-available
+    
+    mkdir -p /data/data/com.termux/files/usr/etc/nginx/sites-available
     cp -f sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
     cp -f nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
     cp -f php.ini /data/data/com.termux/files/usr/lib/php.ini
@@ -184,7 +184,7 @@ setupwordpress() {
     pkill php-fpm >/dev/null 2>&1 
 
     #Boot server
-    mysqld_safe & >/dev/null 2>&1 
+    mysqld_safe >/dev/null 2>&1 & 
     sleep 1
     nginx >/dev/null 2>&1 
     php-fpm >/dev/null 2>&1 
@@ -210,12 +210,12 @@ summary() {
 
 #Clean files
 cleanenv() {
-    rm -rf ip
-    rm -rf livevnc
-    rm -rf /data/data/com.termux/files/usr/share/nginx/html/latest.zip
-    rm -rf adbfiles >/dev/null 2>&1 &
+    rm -rf ip >/dev/null 2>&1 
+    rm -rf livevnc >/dev/null 2>&1 
+    rm -rf /data/data/com.termux/files/usr/share/nginx/html/latest.zip >/dev/null 2>&1 
+    rm -rf adbfiles >/dev/null 2>&1 
     cd ~
-    rm -rf adbfiles >/dev/null 2>&1 &
+    rm -rf adbfiles >/dev/null 2>&1 
     echo "fish" > /data/data/com.termux/files/home/.bashrc
 }
 
