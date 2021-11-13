@@ -128,20 +128,20 @@ setupvnc() {
     for PORT in `cat livevnc`
     do
         if [ -f "/data/data/com.termux/files/usr/tmp/.X`echo $PORT|awk -F ':' '{print $2}'`-lock" ]; then
-            rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock
-            rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
+            rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock >/dev/null 2>&1 
+            rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X* >/dev/null 2>&1 
         fi
         vncserver -kill $PORT 
     done
     #Terminate all xfce sessions
     pkill xfce4-session >/dev/null 2>&1 &
-    rm -rf /data/data/com.termux/files/home/.vnc/passwd
+    rm -rf /data/data/com.termux/files/home/.vnc/passwd >/dev/null 2>&1 
     printf "${Yellow}[*] ${Green}Hitman left\n"
 
     printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 
     #Start VNC and xfce4-session
-vncserver << EOD
+vncserver >/dev/null 2>&1 << EOD
 ${password}
 ${password}
 "n"
@@ -179,17 +179,17 @@ setupwordpress() {
     cp -f startservers /data/data/com.termux/files/usr/bin/startservers
 
     #kill active servers
-    pkill nginx
-    pkill php-fpm
+    pkill nginx >/dev/null 2>&1 
+    pkill php-fpm >/dev/null 2>&1 
 
     #Boot server
-    mysqld_safe &
+    mysqld_safe & >/dev/null 2>&1 
     sleep 1
-    nginx
-    php-fpm
+    nginx >/dev/null 2>&1 
+    php-fpm >/dev/null 2>&1 
     sleep 1
     
-mysql << EOD
+mysql >/dev/null 2>&1 << EOD
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
 EOD
