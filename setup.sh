@@ -149,6 +149,7 @@ EOD
 
     export DISPLAY=:1
     xfce4-session >/dev/null 2>&1 &
+    printf "${Yellow}[*] ${Green}VNC is up!\n"
     sleep 2
 }
 
