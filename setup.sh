@@ -149,6 +149,7 @@ EOD
 
     export DISPLAY=:1
     xfce4-session >/dev/null 2>&1 &
+    sleep 3
 }
 
 #Setting up WordPress, nginx engine and php-fpm f
