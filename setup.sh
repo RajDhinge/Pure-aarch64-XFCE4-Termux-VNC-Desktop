@@ -70,7 +70,7 @@ installpacks() {
         'nmap' 
         'termux-api' 
         'htop' 
-        'git' 
+        'composer' 
         'zip' 
         'ttyd'
         'php-imagick'
