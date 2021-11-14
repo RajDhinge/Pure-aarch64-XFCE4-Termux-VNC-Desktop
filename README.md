@@ -25,7 +25,7 @@ cd ~
 # Features out of the box
 
 1. Auto configure `VNC` with password `1234567`
-2. `WordPress` will be set out of the box uses `mysql` , `nginx server` and `php-fpm`
+2. `WordPress` & wp-cli will be set out of the box uses `mysql` , `nginx server` and `php-fpm`
 3. `adminer.php` file will be automatically placed in your `html` directory
 4. Auto set-up essential packages
     `figlet`
