@@ -202,7 +202,7 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wordpress');
 CREATE DATABASE wordpress
 EOD
     
-    printf "${Yellow}[*] ${Green}`/data/data/com.termux/files/usr/etc/init.d/mysql status`\n"
+    printf "${Yellow}[*]${Green}`/data/data/com.termux/files/usr/etc/init.d/mysql status`\n"
     printf "${Yellow}[*] ${Green}Wordpress is up\n"
     sleep 2
 } 
