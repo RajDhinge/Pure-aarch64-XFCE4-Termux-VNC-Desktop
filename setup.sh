@@ -173,12 +173,17 @@ setupwordpress() {
         unzip /data/data/com.termux/files/usr/share/nginx/html/latest.zip -d /data/data/com.termux/files/usr/share/nginx/html
     fi
     
+    #Silent Wp-Cli Download
+    curl -Os https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    mv -n wp-cli.phar /data/data/com.termux/files/usr/bin/usr/local/bin/wp
+    
     mkdir -p /data/data/com.termux/files/usr/etc/nginx/sites-available
     cp -f sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
     cp -f nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
     cp -f php.ini /data/data/com.termux/files/usr/lib/php.ini
     chmod +x startservers
-    cp -f startservers /data/data/com.termux/files/usr/bin/startservers
+    cp -n startservers /data/data/com.termux/files/usr/bin/startservers
 
     #kill active servers
     pkill nginx >/dev/null 2>&1 
