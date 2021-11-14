@@ -176,7 +176,7 @@ setupwordpress() {
     #Silent Wp-Cli Download
     curl -Os https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     chmod +x wp-cli.phar
-    mv -n wp-cli.phar /data/data/com.termux/files/usr/bin/usr/local/bin/wp
+    mv -n wp-cli.phar /data/data/com.termux/files/usr/bin/wp
     
     mkdir -p /data/data/com.termux/files/usr/etc/nginx/sites-available
     cp -f sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
