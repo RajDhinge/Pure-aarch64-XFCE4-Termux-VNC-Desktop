@@ -41,8 +41,10 @@ server {
 
         location / {
                 root   /data/data/com.termux/files/usr/share/nginx/html;
+                index  index.html index.htm index.php;
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
+                try_files $uri = 404;
         }
         
         location /wordpress {
