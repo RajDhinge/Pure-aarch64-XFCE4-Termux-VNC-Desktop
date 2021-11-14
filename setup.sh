@@ -72,6 +72,7 @@ installpacks() {
         'zsh' 
         'dosbox' 
         'htop' 
+        'pacman'
 #Network        
         'nmap' 
 #XFCE4gui
