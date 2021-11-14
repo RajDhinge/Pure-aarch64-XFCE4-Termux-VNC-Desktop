@@ -67,9 +67,6 @@ installpacks() {
         'tsu' 
         'wget'
         'zip' 
-#Browsers        
-        'otter-browser'
-        'netsurf'
 #Enviroments        
         'proot-distro'
         'zsh' 
@@ -89,6 +86,9 @@ installpacks() {
         'xfce4-calculator-plugin'
         'geany-plugins'
         'xfce4-datetime-plugin'
+#XFCE4Browsers        
+        'otter-browser'
+        'netsurf'
         )
 
     for pack in "${packs[@]}"
