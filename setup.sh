@@ -177,7 +177,8 @@ setupwordpress() {
     curl -Os https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     chmod +x wp-cli.phar
     mv -n wp-cli.phar /data/data/com.termux/files/usr/bin/wp
-    
+    printf "${Yellow}[*] ${Green}WP-CLI Installed!\n"
+   
     mkdir -p /data/data/com.termux/files/usr/etc/nginx/sites-available
     cp -f sites-available/default /data/data/com.termux/files/usr/etc/nginx/sites-available/default
     cp -f nginx.conf /data/data/com.termux/files/usr/etc/nginx/nginx.conf
