@@ -16,12 +16,6 @@ Red='\033[0;31m'
 ifconfig 2>/dev/null | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' > ip
 password='1234567'
 
-figlet "Setting VNC"
-printf "${Yellow}[*] ${Green}Setting up Xfce session\n"
-printf "${Green} Please wait... \n Your ip is ${Yellow}`cat ip`${Green} \n this may take a while...\n" && sleep 1
-printf "${Yellow}[*] ${Green}Terminating active vnc server's if any \n"
-printf "${Yellow}[*] ${Green}Calling hitman \n"
-printf "${Yellow}[*] ${Green}Hitman arrived\n"
 vncserver -list|grep :|awk '{print $1}'|grep : > livevnc  && sleep 5
 
 #Terminate and clean vnc server
@@ -31,17 +25,15 @@ do
         rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock
         rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
     fi
-    vncserver -kill $PORT 
+    vncserver -kill $PORT >/dev/null 2>&1
 done
+
 #Terminate all xfce sessions
 pkill xfce4-session >/dev/null 2>&1 &
 rm -rf /data/data/com.termux/files/home/.vnc/passwd
-printf "${Yellow}[*] ${Green}Hitman left\n"
-
-printf "${Yellow}[*] ${Green}We are about to start vnc server\n"
 
 #Start VNC and xfce4-session
-vncserver << EOD
+vncserver >/dev/null 2>&1 << EOD
 ${password}
 ${password}
 "n"
@@ -51,11 +43,6 @@ export DISPLAY=:1
 xfce4-session >/dev/null 2>&1 &
 clear
 
-figlet "Setting"
-figlet "Wordpress" 
-sleep 2
-printf "${Yellow}[*] ${Green}Setting up wordpress and nginx\n"
-
 #kill active servers
 pkill nginx
 pkill php-fpm
@@ -63,31 +50,24 @@ pkill php-fpm
 #Boot server
 mysqld_safe &
 sleep 1
-nginx
-php-fpm
+nginx  >/dev/null 2>&1
+php-fpm >/dev/null 2>&1
 sleep 1
 
-printf "${Yellow}[*] ${Green}Wordpress is up\n"
-
-sleep 3 && clear 
-figlet "Servers" 
-figlet "Active"
+printf "${Yellow}[*] ${Green}Servers are up\n"
 termux-wake-lock
-printf "${Yellow}[*] ${Green}Wavelock aquired\n"
-printf "${Yellow}[*] ${Green}php-fpm is up\n"
-printf "${Yellow}[*] ${Green}mysql is up\n"
-printf "${Yellow}[*] ${Green}nginx is up\n"
-printf "${Yellow}[*] ${Green}wordpress is up\n${White}"
+
+printf "${Yellow}[*] ${Green}wordpress links : \n${White}"
 printf "\nLocal ip : http://`cat ip`:8080/wordpress"
 printf "\nLocal ip : http://`cat ip`:8080/adminer.php"
-`curl -s ifconfig.co >dev\null 2>&1`
 
+`curl -s ifconfig.co >dev\null 2>&1`
 if [ $? -eq 0 ]; then
     printf "\npublic ip : http://`curl -s ifconfig.co`:8080/wordpress"
     printf "\npublic ip : http://`curl -s ifconfig.co`:8080/adminer.php"
 fi
 
-printf "\n\n${Yellow}[*] ${Green}VNC is up\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
+printf "\n\n${Yellow}[*] ${Green}VNC is up\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n Password : ${Yellow}$password\n${Green}${White}"
 printf "${Yellow}[*] ${Green}SSH is up\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}$password\n \n${White}"
 sshd
 
