@@ -26,6 +26,10 @@ do
         rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
     fi
     vncserver -kill $PORT >/dev/null 2>&1
+    if [ -f "/data/data/com.termux/files/usr/tmp/.X`echo $PORT|awk -F ':' '{print $2}'`-lock" ]; then
+        rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock
+        rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
+    fi
 done
 
 #Terminate all xfce sessions
