@@ -90,6 +90,7 @@ installpacks() {
 #XFCE4Browsers        
         'otter-browser'
         'netsurf'
+        'uget'
         )
 
     for pack in "${packs[@]}"
