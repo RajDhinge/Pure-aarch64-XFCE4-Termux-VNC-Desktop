@@ -53,7 +53,7 @@ pkill nginx
 pkill php-fpm
 
 #Boot server
-mysqld_safe &
+mysqld_safe >/dev/null 2>&1 &
 sleep 1
 nginx  >/dev/null 2>&1
 php-fpm >/dev/null 2>&1
