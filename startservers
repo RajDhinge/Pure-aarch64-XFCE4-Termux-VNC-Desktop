@@ -18,6 +18,7 @@ password='1234567'
 
 vncserver -list|grep :|awk '{print $1}'|grep : > livevnc  && sleep 5
 
+printf "${Yellow}[*] ${Green}Starting Servers\n"
 #Terminate and clean vnc server
 for PORT in `cat livevnc`
 do
