@@ -8,13 +8,13 @@
 clear && 
 pkg update && 
 apt -q install git -y && 
-rm -rf stock-termux-xfce4-vncdesktop &&
-git clone https://github.com/RajDhinge/stock-termux-xfce4-vncdesktop.git && 
-cd stock-termux-xfce4-vncdesktop & 
+rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
+git clone https://github.com/RajDhinge/Pure-aarch64-XFCE4-Termux-VNC-Desktop.git && 
+cd Pure-aarch64-XFCE4-Termux-VNC-Desktop & 
 chmod +x setup.sh && 
 bash setup.sh
 cd .. &&
-rm -rf stock-termux-xfce4-vncdesktop &
+rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &
 cd ~
 ```
 
