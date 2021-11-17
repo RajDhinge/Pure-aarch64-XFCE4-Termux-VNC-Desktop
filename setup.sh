@@ -242,8 +242,8 @@ ${password}
 ${password}
 EOD
     clear && sshd
-    clear && setupvnc
     clear && beautifydesktop
+    clear && setupvnc
         sleep 3 
     clear && setupwordpress
         sleep 3
