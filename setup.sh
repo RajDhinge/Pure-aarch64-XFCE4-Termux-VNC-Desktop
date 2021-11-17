@@ -150,12 +150,13 @@ beautifydesktop() {
     make
     make install
     make icon-cache
+    sleep 5
     cd ..
 
     #set theme and icons
     printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
     rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
-    sleep 200
+    sleep 2
 }
 
 #Setting up WordPress, nginx engine and php-fpm f
