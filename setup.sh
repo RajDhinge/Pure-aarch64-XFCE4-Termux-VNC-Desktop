@@ -49,48 +49,25 @@ installpacks() {
     neofetch
     #Installing essential packages & goodies
     packs=(
-        'figlet'
+        'figlet' 'rsync'
 #Misc        
         'termux-api' 
 #Deamons        
-        'openssh' 
-        'ttyd'
+        'openssh' 'ttyd'
 #developement
-        'nginx' 
-        'php-fpm' 
-        'mariadb' 
-        'nodejs'
-        'composer' 
+        'nginx' 'php-fpm' 'mariadb' 'nodejs' 'composer' 
 #Recommended        
-        'fish'
-        'tree'
-        'tsu' 
-        'wget'
-        'zip' 
+        'fish' 'tree' 'tsu' 'wget' 'zip' 
 #Enviroments        
-        'proot-distro'
-        'zsh' 
-        'dosbox' 
-        'htop' 
-        'pacman'
+        'proot-distro' 'zsh' 'dosbox' 'htop' 'pacman'
 #Network        
         'nmap' 
 #XFCE4gui
-        'x11-repo' 
-        'xfce4' 
+        'x11-repo' 'xfce4' 
 #XFCE4Essentials
-        'tumbler'
-        'tigervnc' 
-        'xfce4-terminal' 
-        'lxqt-archiver' 
-        'xfce4-clipman-plugin'
-        'xfce4-calculator-plugin'
-        'geany-plugins'
-        'xfce4-datetime-plugin'
+        'tumbler' 'tigervnc' 'xfce4-terminal' 'lxqt-archiver' 'xfce4-clipman-plugin' 'xfce4-calculator-plugin' 'geany-plugins' 'xfce4-datetime-plugin'
 #XFCE4Browsers        
-        'otter-browser'
-        'netsurf'
-        'uget'
+        'otter-browser' 'netsurf' 'uget'
         )
 
     for pack in "${packs[@]}"
