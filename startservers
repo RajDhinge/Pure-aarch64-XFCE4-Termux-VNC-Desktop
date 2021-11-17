@@ -26,7 +26,7 @@ do
         rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock
         rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
     fi
-    vncserver -kill $PORT >/dev/null 2>&1
+    vncserver -kill $PORT
     if [ -f "/data/data/com.termux/files/usr/tmp/.X`echo $PORT|awk -F ':' '{print $2}'`-lock" ]; then
         rm -rf /data/data/com.termux/files/usr/tmp/.X*-lock
         rm -rf /data/data/com.termux/files/usr/tmp/.X11-unix/X*
@@ -66,7 +66,7 @@ printf "${Yellow}[*] ${Green}wordpress links : \n${White}"
 printf "Local ip : http://`cat ip`:8080/wordpress"
 printf "\nLocal ip : http://`cat ip`:8080/adminer.php"
 
-`curl -s ifconfig.co >dev\null 2>&1`
+`curl -s ifconfig.co >/dev/null 2>&1`
 if [ $? -eq 0 ]; then
     printf "\npublic ip : http://`curl -s ifconfig.co`:8080/wordpress"
     printf "\npublic ip : http://`curl -s ifconfig.co`:8080/adminer.php"
