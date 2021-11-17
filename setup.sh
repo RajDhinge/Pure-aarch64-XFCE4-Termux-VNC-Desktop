@@ -144,18 +144,18 @@ beautifydesktop() {
     
     printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
     #install elementary dark icons
-    git clone https://github.com/shimmerproject/elementary-xfce >/dev/null 2>&1@
+    git clone https://github.com/shimmerproject/elementary-xfce
     cd elementary-xfce 
-    ./configure --prefix=$HOME/.local  >/dev/null 2>&1
-    make  >/dev/null 2>&1
-    make install  >/dev/null 2>&1
-    make icon-caches  >/dev/null 2>&1
+    ./configure --prefix=$HOME/.local
+    make
+    make install
+    make icon-cache
     cd ..
 
     #set theme and icons
     printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
     rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
-    sleep 2
+    sleep 200
 }
 
 #Setting up WordPress, nginx engine and php-fpm f
