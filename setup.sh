@@ -144,6 +144,7 @@ beautifydesktop() {
     
     printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
     #install elementary dark icons
+    git clone https://github.com/shimmerproject/elementary-xfce >/dev/null 2>&1@
     ./configure --prefix=$HOME/.local  >/dev/null 2>&1
     make  >/dev/null 2>&1
     make install  >/dev/null 2>&1
