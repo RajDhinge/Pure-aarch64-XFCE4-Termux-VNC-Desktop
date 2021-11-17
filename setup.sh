@@ -155,6 +155,29 @@ EOD
     sleep 2
 }
 
+beautifydesktop() {
+
+    figlet "Setting"
+    figlet "Themes"
+    #Install mac os dark theme 
+    printf "${Yellow}[*] ${Green}Installing MacOs Dark theme\n"
+    git clone https://github.com/B00merang-Project/macOS-Dark >/dev/null 2>&1
+    mkdir ~/.local/share/themes  >/dev/null 2>&1
+    rsync -a macOS-Dark/ ~/.local/share/themes/macOS-Dark  >/dev/null 2>&1
+    
+    printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
+    #install elementary dark icons
+    ./configure --prefix=$HOME/.local  >/dev/null 2>&1
+    make  >/dev/null 2>&1
+    make install  >/dev/null 2>&1
+    make icon-caches  >/dev/null 2>&1
+
+    #set theme and icons
+    printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
+    rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
+    sleep 2
+}
+
 #Setting up WordPress, nginx engine and php-fpm f
 setupwordpress() {
     figlet "Setting"
@@ -243,6 +266,7 @@ ${password}
 EOD
     clear && sshd
     clear && setupvnc
+    clear && beautifydesktop
         sleep 3 
     clear && setupwordpress
         sleep 3
