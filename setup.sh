@@ -55,7 +55,7 @@ installpacks() {
 #XFCE4gui
         'x11-repo' 'xfce4' 
 #XFCE4Essentials
-        'tumbler' 'tigervnc' 'xfce4-terminal' 'lxqt-archiver' 'xfce4-clipman-plugin' 'xfce4-calculator-plugin' 'geany-plugins' 'xfce4-datetime-plugin' 'xfce4-whiskermenu-plugin'
+        'tumbler' 'tigervnc' 'xfce4-terminal' 'lxqt-archiver' 'xfce4-clipman-plugin' 'xfce4-calculator-plugin' 'geany-plugins' 'xfce4-datetime-plugin' 'xfce4-whiskermenu-plugin' 'xfce4-taskmanager'
 #Deamons        
         'openssh' 'ttyd'
 #developement
