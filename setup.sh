@@ -219,7 +219,6 @@ summary() {
     printf "${Yellow}[*] ${Green}Wavelock aquired\n"
     printf "${Yellow}[*] ${Green}VNC is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}509`vncserver -list|grep :|awk '{print $1}'|grep :|awk -F ':' '{print$2}'`${Green}\n Password : ${Yellow}$password\n${Green}\n keep this termux session active\n \n${White}"
     printf "${Yellow}[*] ${Green}SSH is Active\n Local IP: ${Yellow}`cat ip` \n ${Green}Port: ${Yellow}8022${Green}\n Password : ${Yellow}$password\n \n${White}"
-    printf "\n${Yellow}[*] ${Green}Note: To use SSH a restart to termux is required as we have set up a new password\n \n${White}"
 }
 
 #Clean files
