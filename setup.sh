@@ -99,8 +99,8 @@ beautifydesktop() {
     #Install mac os dark theme 
     printf "${Yellow}[*] ${Green}Installing MacOs Dark theme\n"
     git clone https://github.com/B00merang-Project/macOS-Dark >/dev/null 2>&1
-    mkdir ~/.local/share/themes  >/dev/null 2>&1
-    rsync -a ./macOS-Dark/ ~/.local/share/themes/macOS-Dark  >/dev/null 2>&1
+    mkdir -p ~/.local/share/themes  #>/dev/null 2>&1
+    rsync -a ./macOS-Dark/ ~/.local/share/themes/macOS-Dark  #>/dev/null 2>&1
     
     printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
     #install elementary dark icons
@@ -116,7 +116,7 @@ beautifydesktop() {
     #set theme and icons
     printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
     rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
-    sleep 2
+    sleep 2000
 }
 
 #Setup VNC
