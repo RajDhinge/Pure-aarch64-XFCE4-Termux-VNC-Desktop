@@ -48,24 +48,26 @@ installpacks() {
     #Installing essential packages & goodies
     packs=(
         'figlet' 'rsync'
-#Misc        
-        'termux-api' 
-#Deamons        
-        'openssh' 'ttyd'
-#developement
-        'nginx' 'php-fpm' 'mariadb' 'nodejs' 'composer' 
 #Recommended        
         'fish' 'tree' 'tsu' 'wget' 'zip' 
-#Enviroments        
-        'proot-distro' 'zsh' 'dosbox' 'htop' 'pacman'
-#Network        
-        'nmap' 
+#Misc        
+        'termux-api'
 #XFCE4gui
         'x11-repo' 'xfce4' 
 #XFCE4Essentials
-        'tumbler' 'tigervnc' 'xfce4-terminal' 'lxqt-archiver' 'xfce4-clipman-plugin' 'xfce4-calculator-plugin' 'geany-plugins' 'xfce4-datetime-plugin'
+        'tumbler' 'tigervnc' 'xfce4-terminal' 'lxqt-archiver' 'xfce4-clipman-plugin' 'xfce4-calculator-plugin' 'geany-plugins' 'xfce4-datetime-plugin' 'xfce4-whiskermenu-plugin'
+#Deamons        
+        'openssh' 'ttyd'
+#developement
+        'nginx' 'php-fpm' 'mariadb' 'nodejs' 'composer' 'qgui'
+#Enviroments        
+        'proot-distro' 'zsh' 'htop' 'pacman'
+#Network        
+        'nmap' 'transmission-gtk'
 #XFCE4Browsers        
         'otter-browser' 'netsurf' 'uget'
+#Extras
+        'dosbox'
         )
 
     for pack in "${packs[@]}"
