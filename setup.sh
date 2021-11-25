@@ -92,6 +92,33 @@ installpacks() {
     printf "\n${Yellow}[*] ${Green}Essential packs are now installed!\n"
 }
 
+beautifydesktop() {
+    sleep 1
+    figlet "Setting"
+    figlet "Themes"
+    #Install mac os dark theme 
+    printf "${Yellow}[*] ${Green}Installing MacOs Dark theme\n"
+    git clone https://github.com/B00merang-Project/macOS-Dark >/dev/null 2>&1
+    mkdir ~/.local/share/themes  >/dev/null 2>&1
+    rsync -a ./macOS-Dark/ ~/.local/share/themes/macOS-Dark  >/dev/null 2>&1
+    
+    printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
+    #install elementary dark icons
+    git clone https://github.com/shimmerproject/elementary-xfce
+    cd elementary-xfce 
+    ./configure --prefix=$HOME/.local
+    make
+    make install
+    make icon-cache
+    sleep 5
+    cd ..
+
+    #set theme and icons
+    printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
+    rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
+    sleep 2
+}
+
 #Setup VNC
 setupvnc() {
     figlet "Setting VNC"
@@ -129,33 +156,6 @@ EOD
     export DISPLAY=:1
     xfce4-session >/dev/null 2>&1 &
     printf "${Yellow}[*] ${Green}VNC is up!\n"
-    sleep 2
-}
-
-beautifydesktop() {
-
-    figlet "Setting"
-    figlet "Themes"
-    #Install mac os dark theme 
-    printf "${Yellow}[*] ${Green}Installing MacOs Dark theme\n"
-    git clone https://github.com/B00merang-Project/macOS-Dark >/dev/null 2>&1
-    mkdir ~/.local/share/themes  >/dev/null 2>&1
-    rsync -a macOS-Dark/ ~/.local/share/themes/macOS-Dark  >/dev/null 2>&1
-    
-    printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
-    #install elementary dark icons
-    git clone https://github.com/shimmerproject/elementary-xfce
-    cd elementary-xfce 
-    ./configure --prefix=$HOME/.local
-    make
-    make install
-    make icon-cache
-    sleep 5
-    cd ..
-
-    #set theme and icons
-    printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
-    rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
     sleep 2
 }
 
