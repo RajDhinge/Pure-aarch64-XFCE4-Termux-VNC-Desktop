@@ -102,19 +102,19 @@ beautifydesktop() {
     
     printf "${Yellow}[*] ${Green}Installing Elementary OS icons\n"
     #install elementary dark icons
-    git clone https://github.com/shimmerproject/elementary-xfce
+    git clone https://github.com/shimmerproject/elementary-xfce >/dev/null 2>&1
     cd elementary-xfce 
     ./configure --prefix=$HOME/.local
-    make
-    make install
-    make icon-cache
+    make >/dev/null 2>&1
+    make install >/dev/null 2>&1
+    make icon-cache >/dev/null 2>&1
     sleep 5
     cd ..
 
     #set theme and icons
     printf "${Yellow}[*] ${Green}Setting downloaded themes and icons\n"
-    mkdir -p /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
-    rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/
+    mkdir -p /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/ >/dev/null 2>&1
+    rsync -a xsettings.xml /data/data/com.termux/files/home/.config/xfce4/xfconf/xfce-perchannel-xml/ >/dev/null 2>&1
     sleep 2
 }
 
