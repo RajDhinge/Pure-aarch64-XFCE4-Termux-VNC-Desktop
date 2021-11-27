@@ -63,7 +63,7 @@ installpacks() {
 #Enviroments        
         'proot-distro' 'zsh' 'htop' 'pacman'
 #Network        
-        'nmap' 'transmission-gtk'
+        'nmap' 'transmission-gtk' 'wireshark-gtk'
 #XFCE4Browsers        
         'otter-browser' 'netsurf' 'uget'
 #Extras
