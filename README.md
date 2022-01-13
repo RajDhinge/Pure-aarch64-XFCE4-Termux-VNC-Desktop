@@ -116,3 +116,4 @@ cd ~
 * Error: cURL error 1: Received HTTP/0.9 when not allowed (http_request_failed)
   [ Rest API encountered an error]
   [ Your site could not complete loopback request ]
+* php 8.1 issue : https://core.trac.wordpress.org/ticket/42362#comment:33
