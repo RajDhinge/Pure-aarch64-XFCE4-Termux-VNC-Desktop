@@ -25,6 +25,21 @@ cd ~
 
 ![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
 
+What is this and why use this?
+
+What you see in front of you is an terminal emulator on android devices this terminal emulator is capable of creating subsystems in itself having said that there are many use cases of having an emulated OS on you android device.
+
+1. You can install few different available aarch64 flavours of Linux 
+2. Creating servers 
+3. Hosting websites
+4. Hosting a remote Linux desktop
+5. Access your device from anywhere across the internet
+6. Use this as a sandbox
+7. Ethical hacking
+8. Programming and educational purpose
+
+There are numerous amazing use cases of having an actual OS on your phone these are just few of them :)
+
 # Features out of the box
 
 1. Auto configure `VNC` with password `1234567`
