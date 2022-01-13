@@ -20,7 +20,6 @@ cd ~
 # Commands
 
 1. `startservers` - starts nginx, mysql, phpfpm and vnc
-2. `stopservers` - stops all the above services
 
 # Pure-aarch64-XFCE4-Termux-VNC-Desktop
 
