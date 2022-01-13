@@ -17,6 +17,10 @@ cd .. &&
 rm -rf Pure-aarch64-XFCE4-Termux-VNC-Desktop &&
 cd ~
 ```
+# Commands
+
+1. `startserver` - starts nginx, mysql, phpfpm and vnc
+2. `stopserver` - stops all the above services
 
 # Pure-aarch64-XFCE4-Termux-VNC-Desktop
 
