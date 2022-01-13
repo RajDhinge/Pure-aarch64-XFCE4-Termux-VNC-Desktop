@@ -25,7 +25,7 @@ cd ~
 
 ![xfce4](https://user-images.githubusercontent.com/22621881/141480063-3f9cf31e-814f-4a54-8996-fb67d322b324.png)
 
-What is this and why use this?
+## What is this and why use this?
 
 What you see in front of you is an terminal emulator on android devices this terminal emulator is capable of creating subsystems in itself having said that there are many use cases of having an emulated OS on you android device.
 
