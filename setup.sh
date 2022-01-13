@@ -59,7 +59,7 @@ installpacks() {
 #Deamons        
         'openssh' 'ttyd'
 #developement
-        'nginx' 'php-fpm' 'mariadb' 'nodejs' 'composer' 'qgui'
+        'nginx' 'php7-fpm' 'mariadb' 'nodejs' 'composer' 'qgui'
 #Enviroments        
         'proot-distro' 'zsh' 'htop' 'pacman'
 #Network        
