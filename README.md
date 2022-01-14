@@ -14,6 +14,7 @@ What you see in front of you is an terminal emulator on android devices this ter
 6. Use this as a sandbox
 7. Ethical hacking
 8. Programming and educational purpose
+9. Dosbox perhaps dos gaming aswell :)
 
 There are numerous amazing use cases of having an actual OS on your phone these are just few of them :)
 
