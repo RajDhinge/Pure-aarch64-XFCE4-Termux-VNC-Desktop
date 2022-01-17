@@ -67,7 +67,7 @@ installpacks() {
 #XFCE4Browsers        
         'otter-browser' 'netsurf' 'uget'
 #Extras
-        'dosbox'
+        'dosbox' 'cronie' 'termux-services'
         )
 
     for pack in "${packs[@]}"
