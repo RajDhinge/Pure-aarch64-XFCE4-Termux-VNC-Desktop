@@ -49,7 +49,7 @@ installpacks() {
     packs=(
         'figlet' 'rsync'
 #Recommended        
-        'fish' 'tree' 'tsu' 'wget' 'zip' 
+        'fish' 'tree' 'tsu' 'wget' 'zip'
 #Misc        
         'termux-api'
 #XFCE4gui
@@ -59,7 +59,7 @@ installpacks() {
 #Deamons        
         'openssh' 'ttyd'
 #developement
-        'nginx' 'php7-fpm' 'mariadb' 'nodejs' 'composer' 'qgui'
+        'nginx' 'php7-fpm' 'mariadb' 'nodejs' 'composer' 'qgui' 'vim-gtk'
 #Enviroments        
         'proot-distro' 'zsh' 'htop' 'pacman'
 #Network        
